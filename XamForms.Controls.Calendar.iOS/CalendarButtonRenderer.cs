@@ -111,7 +111,7 @@ namespace XamForms.Controls.iOS
 			if (string.IsNullOrEmpty(p.Text)) return;
 			var bounds = p.Text.StringSize(UIFont.FromName("Helvetica", p.TextSize));
 			var al = (int)p.TextAlign;
-			var x = r.X; ;
+			var x = r.X;
 
 			if ((al & 2) == 2) // center
 			{

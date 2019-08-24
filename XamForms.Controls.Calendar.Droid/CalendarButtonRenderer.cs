@@ -15,10 +15,9 @@ namespace XamForms.Controls.Droid
     [Preserve(AllMembers = true)]
     public class CalendarButtonRenderer : ButtonRenderer
     {
-        public CalendarButtonRenderer(Android.Content.Context context) : base(context)
+		public CalendarButtonRenderer(Android.Content.Context context) : base(context)
         {
-
-        }
+		}
 
         protected override void OnElementChanged(ElementChangedEventArgs<Button> e)
         {
@@ -92,7 +91,7 @@ namespace XamForms.Controls.Droid
 
             var d = new List<Drawable>();
             var image = await GetBitmap(element.BackgroundImage);
-            d.Add(new BitmapDrawable(image));
+            d.Add(new BitmapDrawable(Context.Resources, image));
             var drawable = new GradientDrawable();
             drawable.SetShape(ShapeType.Rectangle);
             var borderWidth = (int)Math.Ceiling(Element.BorderWidth);
@@ -115,7 +114,7 @@ namespace XamForms.Controls.Droid
                 var bp = element.BackgroundPattern.Pattern[i];
                 if (!string.IsNullOrEmpty(bp.Text))
                 {
-                    d.Add(new TextDrawable(bp.Color.ToAndroid()) { Pattern = bp });
+                    d.Add(new TextDrawable(bp.Color.ToAndroid(), this.Context) { Pattern = bp });
                 }
                 else
                 {
@@ -160,21 +159,22 @@ namespace XamForms.Controls.Droid
     {
         Paint paint;
         public Pattern Pattern { get; set; }
-
-        public TextDrawable(Android.Graphics.Color color)
+		private readonly Android.Content.Context _context;
+		public TextDrawable(Android.Graphics.Color color, Android.Content.Context context)
             : base(color)
         {
             paint = new Paint();
             paint.AntiAlias = true;
             paint.SetStyle(Paint.Style.Fill);
             paint.TextAlign = Paint.Align.Left;
+			_context = context;
         }
 
         public override void Draw(Canvas canvas)
         {
             base.Draw(canvas);
             paint.Color = Pattern.TextColor.ToAndroid();
-            paint.TextSize = Android.Util.TypedValue.ApplyDimension(Android.Util.ComplexUnitType.Sp, Pattern.TextSize > 0 ? Pattern.TextSize : 12, Forms.Context.Resources.DisplayMetrics);
+            paint.TextSize = Android.Util.TypedValue.ApplyDimension(Android.Util.ComplexUnitType.Sp, Pattern.TextSize > 0 ? Pattern.TextSize : 12, _context.Resources.DisplayMetrics);
             var bounds = new Rect();
             paint.GetTextBounds(Pattern.Text, 0, Pattern.Text.Length, bounds);
             var al = (int)Pattern.TextAlign;

@@ -52,7 +52,7 @@ namespace CalendarDemo
 					new SpecialDate(DateTime.Now.AddDays(4))
 					{
 						Selectable = true,
-						BackgroundImage = FileImageSource.FromFile("icon.png") as FileImageSource
+						BackgroundImage = ImageSource.FromFile("icon.png") as FileImageSource
 					}
 				}
 			};

@@ -204,22 +204,22 @@ namespace XamForms.Controls
 			set { TitleLeftArrow.BorderColor = value; }
 		}
 
-		public static readonly BindableProperty TitleLeftArrowBorderRadiusProperty = BindableProperty.Create(nameof(TitleLeftArrowBorderRadius), typeof(Int32), typeof(Calendar), default(Int32),
-					propertyChanged: (bindable, oldValue, newValue) => (bindable as Calendar).TitleLeftArrow.BorderRadius = (Int32)newValue);
+		public static readonly BindableProperty TitleLeftArrowCornerRadiusProperty = BindableProperty.Create(nameof(TitleLeftArrowCornerRadius), typeof(Int32), typeof(Calendar), default(Int32),
+					propertyChanged: (bindable, oldValue, newValue) => (bindable as Calendar).TitleLeftArrow.CornerRadius = (Int32)newValue);
 
-		public Int32 TitleLeftArrowBorderRadius
+		public Int32 TitleLeftArrowCornerRadius
 		{
-			get { return TitleLeftArrow.BorderRadius; }
-			set { TitleLeftArrow.BorderRadius = value; }
+			get { return TitleLeftArrow.CornerRadius; }
+			set { TitleLeftArrow.CornerRadius = value; }
 		}
 
-		public static readonly BindableProperty TitleLeftArrowImageProperty = BindableProperty.Create(nameof(TitleLeftArrowImage), typeof(FileImageSource), typeof(Calendar), default(FileImageSource),
-					propertyChanged: (bindable, oldValue, newValue) => (bindable as Calendar).TitleLeftArrow.Image = (FileImageSource)newValue);
+		public static readonly BindableProperty TitleLeftArrowImageProperty = BindableProperty.Create(nameof(TitleLeftArrowImage), typeof(ImageSource), typeof(Calendar), default(ImageSource),
+					propertyChanged: (bindable, oldValue, newValue) => (bindable as Calendar).TitleLeftArrow.ImageSource = (ImageSource)newValue);
 
-		public FileImageSource TitleLeftArrowImage
+		public ImageSource TitleLeftArrowImage
 		{
-			get { return TitleLeftArrow.Image; }
-			set { TitleLeftArrow.Image = value; }
+			get { return TitleLeftArrow.ImageSource; }
+			set { TitleLeftArrow.ImageSource = value; }
 		}
 
 		public static readonly BindableProperty TitleLeftArrowIsEnabledCoreProperty = BindableProperty.Create(nameof(TitleLeftArrowIsEnabled), typeof(Boolean), typeof(Calendar), default(Boolean),
@@ -330,22 +330,22 @@ namespace XamForms.Controls
 			set { TitleRightArrow.BorderColor = value; }
 		}
 
-		public static readonly BindableProperty TitleRightArrowBorderRadiusProperty = BindableProperty.Create(nameof(TitleRightArrowBorderRadius), typeof(Int32), typeof(Calendar), default(Int32),
-					propertyChanged: (bindable, oldValue, newValue) => (bindable as Calendar).TitleRightArrow.BorderRadius = (Int32)newValue);
+		public static readonly BindableProperty TitleRightArrowCornerRadiusProperty = BindableProperty.Create(nameof(TitleRightArrowCornerRadius), typeof(Int32), typeof(Calendar), default(Int32),
+					propertyChanged: (bindable, oldValue, newValue) => (bindable as Calendar).TitleRightArrow.CornerRadius = (Int32)newValue);
 
-		public Int32 TitleRightArrowBorderRadius
+		public Int32 TitleRightArrowCornerRadius
 		{
-			get { return TitleRightArrow.BorderRadius; }
-			set { TitleRightArrow.BorderRadius = value; }
+			get { return TitleRightArrow.CornerRadius; }
+			set { TitleRightArrow.CornerRadius = value; }
 		}
 
-		public static readonly BindableProperty TitleRightArrowImageProperty = BindableProperty.Create(nameof(TitleRightArrowImage), typeof(FileImageSource), typeof(Calendar), default(FileImageSource),
-					propertyChanged: (bindable, oldValue, newValue) => (bindable as Calendar).TitleRightArrow.Image = (FileImageSource)newValue);
+		public static readonly BindableProperty TitleRightArrowImageProperty = BindableProperty.Create(nameof(TitleRightArrowImage), typeof(ImageSource), typeof(Calendar), default(ImageSource),
+					propertyChanged: (bindable, oldValue, newValue) => (bindable as Calendar).TitleRightArrow.ImageSource = (ImageSource)newValue);
 
-		public FileImageSource TitleRightArrowImage
+		public ImageSource TitleRightArrowImage
 		{
-			get { return TitleRightArrow.Image; }
-			set { TitleRightArrow.Image = value; }
+			get { return TitleRightArrow.ImageSource; }
+			set { TitleRightArrow.ImageSource = value; }
 		}
 
 		public static readonly BindableProperty TitleRightArrowIsEnabledCoreProperty = BindableProperty.Create(nameof(TitleRightArrowIsEnabled), typeof(Boolean), typeof(Calendar), default(Boolean),

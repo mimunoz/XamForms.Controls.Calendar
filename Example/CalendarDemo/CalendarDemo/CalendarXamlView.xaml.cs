@@ -7,6 +7,6 @@ namespace CalendarDemo
         public CalendarXamlView()
         {
             InitializeComponent();
-        }
-    }
+		}
+	}
 }

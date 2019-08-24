@@ -62,7 +62,6 @@ namespace XamForms.Controls
 			get { return (FileImageSource)GetValue(BackgroundImageProperty); }
 			set { SetValue(BackgroundImageProperty, value); }	
 		}
-
     }
 }
 

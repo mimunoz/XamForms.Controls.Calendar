@@ -29,7 +29,7 @@ namespace XamForms.Controls
 		/// Gets or sets the background pattern (only working on iOS and Android).
 		/// </summary>
 		/// <value>The background pattern.</value>
-		public BackgroundPattern BackgroundPattern{ get; set; }
+		public BackgroundPattern BackgroundPattern { get; set; }
 	}
 
 	public class BackgroundPattern
@@ -45,7 +45,7 @@ namespace XamForms.Controls
 		public float GetTop(int t)
 		{
 			float r = 0;
-			for (int i = t-columns; i > -1; i-=columns)
+			for (int i = t - columns; i > -1; i -= columns)
 			{
 				r += Pattern[i].HightPercent;
 			}
@@ -55,7 +55,7 @@ namespace XamForms.Controls
 		public float GetLeft(int l)
 		{
 			float r = 0;
-			for (int i = l-1; i > -1 && (i+1) % columns != 0; i--)
+			for (int i = l - 1; i > -1 && (i + 1) % columns != 0; i--)
 			{
 				r += Pattern[i].WidthPercent;
 			}
@@ -63,12 +63,14 @@ namespace XamForms.Controls
 		}
 	}
 
-	/*Left = 1,
-	Center = 2,
-	Right = 4,
-	Top = 8,
-	Middle = 16,
-	Bottom = 32*/
+	/**
+	 * Left = 1,
+	 * Center = 2,
+	 * Right = 4,
+	 * Top = 8,
+	 * Middle = 16,
+	 * Bottom = 32
+	 */
 	public enum TextAlign
 	{
 		LeftTop = 9,
